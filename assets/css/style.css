@@ -95,7 +95,7 @@ h3 {
     padding-top: 5px;
     padding-right: 15px;
     line-height: 1.2;
-    flex: 0 2 200px;
+    flex: 0 0 200px;
 }
 
 #about-me p {
@@ -115,44 +115,53 @@ h3 {
     flex: 0 1 90%;
 }
 
+.work-links {
+    pointer-events: none;
+}
+
 .work-links h4,
 .work-links p {
     background-color: var(--second-color);
     color: var(--sub-text);
 }
 
+img {
+    opacity: 50%;
+    z-index: 0;
+    display:inline-flex;
+    width: 100%;
+    height: 100%;
+}
+
 #work-one {
-    background: url('http://placekitten.com/600/400');
-    src: url();
+    text-decoration: none;
+    flex-basis: 100%;
 }
 
 #work-two {
-    background: url('http://placekitten.com/600/400');
-    src: url();
+    text-decoration: none;
 }
 
 #work-three {
-    background: url('http://placekitten.com/600/400');
-    src: url();
+    text-decoration: none;
 }
 
 #work-four {
-    background: url('http://placekitten.com/600/400');
-    src: url();
+    text-decoration: none;
 }
 
 #work-five {
-    background: url('http://placekitten.com/600/400');
-    src: url();
+    text-decoration: none;
 }
 
 .link-words {
     display: table;
     position: relative;
-    top: 100px;
+    top: -100px;
+    z-index: 1;
 }
 
-.work-links {
+.main-content a {
     border: 5px solid var(--second-color);
     margin: 10px;
     flex: 1 1 auto;
@@ -189,5 +198,73 @@ footer {
     color: var(--sub-text);
 }
 
+img:hover {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 50%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
 @media screen and (max-width: 768px) {
+
+    #top-nav {
+        text-align: center;
+        margin: auto;
+        padding: auto;
+    }
+
+    #about-me {
+        display: block;
+    }
+
+    #about-me h3 {
+        padding-bottom: 10px;
+    }
+
+    #work-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        flex: 1 1 100%;
+        border: 0px none;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .work-links,
+    .main-content a {
+        width: auto;
+    }
+
+    h3,
+    #work {
+        text-align: center;
+        display: block;
+        padding-right: 0px;
+    }
+
+    .main-content {
+        display: flex;
+    }
+
+    footer {
+        display: block;
+        text-align: center;
+        margin: auto;
+        padding: auto;
+    }
+
+    #bottom-nav,
+    #bottom-nav ul {
+        border: 0px none;
+        margin: auto;
+        padding: 0;
+    }
 }
